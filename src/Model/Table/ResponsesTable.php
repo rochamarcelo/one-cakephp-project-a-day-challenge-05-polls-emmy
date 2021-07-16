@@ -47,6 +47,9 @@ class ResponsesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('CounterCache', [
+            'Options' => ['response_count'],
+        ]);
 
         $this->belongsTo('Options', [
             'foreignKey' => 'option_id',
