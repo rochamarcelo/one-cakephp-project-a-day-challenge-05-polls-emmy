@@ -30,3 +30,6 @@ On this project I'm using CakePHP 4 (including CounterCache behavior ) and https
 
 # Poll View Page
 ![alt text](./resources/result-05-polls.png)
+
+![alt text](./resources/result-05-polls-02.png)
+
