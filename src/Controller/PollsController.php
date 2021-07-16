@@ -34,8 +34,11 @@ class PollsController extends AppController
         $poll = $this->Polls->get($id, [
             'contain' => ['Options'],
         ]);
+        $allResponses = collection($poll->options)
+            ->sumOf('response_count');
+        $showResult = (bool)$this->request->getQuery('showResult');
 
-        $this->set(compact('poll'));
+        $this->set(compact('poll', 'allResponses', 'showResult'));
     }
 
     /**
@@ -56,6 +59,10 @@ class PollsController extends AppController
         $Table->saveOrFail($entity);
         $this->Flash->success(__('Thanks for voting'));
 
-        return $this->redirect('/');
+        return $this->redirect([
+            'action' => 'view',
+            $option->poll_id,
+            '?' => ['showResult' => 1],
+        ]);
     }
 }

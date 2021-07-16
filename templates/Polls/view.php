@@ -2,6 +2,7 @@
 /**
  * @var \App\Model\Entity\Poll $poll
  * @var \App\View\AppView $this
+ * @var bool $showResult
  */
 ?>
 <section class="hero is-primary">
@@ -31,6 +32,9 @@
                     <strong><?= h($option->name)?></strong>
                 </p>
             </div>
+            <?php if ($showResult):?>
+            <?= $this->Poll->result($option->response_count)?>
+            <?php else:?>
             <nav class="level is-mobile">
                 <div class="level-left">
                     <a class="level-item">
@@ -46,6 +50,7 @@
                     </a>
                 </div>
             </nav>
+            <?php endif;?>
         </div>
     </article>
     <?php endforeach;?>
