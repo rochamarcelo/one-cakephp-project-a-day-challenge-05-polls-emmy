@@ -27,3 +27,6 @@ On this project I'm using CakePHP 4 (including CounterCache behavior ) and https
 ## Links
 - https://book.cakephp.org/4/en/orm/behaviors/counter-cache.html
 - https://bulma.io/documentation
+
+# Poll View Page
+![alt text](./resources/result-05-polls.png)
