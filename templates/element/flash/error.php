@@ -9,3 +9,8 @@ if (!isset($params['escape']) || $params['escape'] !== false) {
 }
 ?>
 <div class="message error" onclick="this.classList.add('hidden');"><?= $message ?></div>
+<div class="container" style="margin-bottom: 5px;">
+    <div class="notification is-danger">
+        <?= $message ?>
+    </div>
+</div>
